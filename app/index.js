@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 import Home from './components/Home'
 import Settings from './components/Settings'
+import Chat from './components/Chat'
 
 import './styles/reset.css'
 
@@ -16,6 +17,7 @@ ReactDOM.render(
 		<Route path="/" component={App}>
 			<IndexRoute component={Home} />
 			<Route path="settings" component={Settings} />
+      <Route path="chat" component={Chat} />
 		</Route>
 	</Router>, document.getElementById('root')
 )
