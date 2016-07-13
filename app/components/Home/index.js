@@ -4,6 +4,7 @@ import style from './style.css'
 
 import FormSignup from '../FormSignup'
 import FormLogin from '../FormLogin'
+import PhoenixChat from 'phoenix-chat'
 
 export class Home extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ export class Home extends React.Component {
         <h1>Phoenix Chat</h1>
         { this.state.formState === "signup" ? <FormSignup /> : null }
         { this.state.formState === "login" ? <FormLogin /> : null }
+        <PhoenixChat />
       </div>
     )
   }
