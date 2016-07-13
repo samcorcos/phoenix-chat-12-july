@@ -1,14 +1,31 @@
 import React from 'react'
 import CSSModules from 'react-css-modules'
 import style from './style.css'
+import 'whatwg-fetch'
 
 export class FormSignup extends React.Component {
   constructor(props) {
     super(props)
   }
 
-  submit(e) {
-    console.log("Submit button clicked")
+  submit() {
+    const user = {
+      username: document.getElementById('signup-username').value,
+      email: document.getElementById('signup-email').value,
+      password: document.getElementById('signup-password').value
+    }
+    fetch('http://localhost:4000/api/users', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ user })
+    }).then(function(res) {
+      console.log(res);
+    }).catch(function(res) {
+      console.log(res);
+    })
   }
 
   render() {
