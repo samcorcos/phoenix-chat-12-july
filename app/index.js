@@ -5,6 +5,8 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import Home from './components/Home'
 import Settings from './components/Settings'
 
+import './styles/reset.css'
+
 const App = (props) => {
   return <div> { props.children } </div>
 }
