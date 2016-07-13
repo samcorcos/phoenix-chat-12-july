@@ -15,11 +15,14 @@ const App = (props) => {
 }
 
 ReactDOM.render(
-	<Router history={hashHistory}>
-		<Route path="/" component={App}>
-			<IndexRoute component={Home} />
-			<Route path="settings" component={Settings} />
-      <Route path="chat" component={Chat} />
-		</Route>
-	</Router>, document.getElementById('root')
+  <Provider store={store}>
+    <Router history={hashHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={Home} />
+        <Route path="settings" component={Settings} />
+        <Route path="chat" component={Chat} />
+      </Route>
+    </Router>
+  </Provider>,
+  document.getElementById('root')
 )

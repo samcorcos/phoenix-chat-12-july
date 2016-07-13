@@ -1,7 +1,8 @@
 import React from 'react'
 import CSSModules from 'react-css-modules'
 import style from './style.css'
-import 'whatwg-fetch'
+import { connect } from 'react-redux'
+import Actions from 'redux/actions'
 
 export class FormSignup extends React.Component {
   constructor(props) {
@@ -14,18 +15,7 @@ export class FormSignup extends React.Component {
       email: document.getElementById('signup-email').value,
       password: document.getElementById('signup-password').value
     }
-    fetch('http://localhost:4000/api/users', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ user })
-    }).then(function(res) {
-      console.log(res);
-    }).catch(function(res) {
-      console.log(res);
-    })
+    this.props.dispatch(Actions.userNew(user))
   }
 
   render() {
@@ -54,4 +44,4 @@ export class FormSignup extends React.Component {
   }
 }
 
-export default CSSModules(FormSignup, style)
+export default connect()(CSSModules(FormSignup, style))

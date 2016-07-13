@@ -4,7 +4,9 @@ import { combineReducers } from 'redux'
 function user(state={}, action) {
   switch (action.type) {
     case "USER_NEW":
-      return state
+      return assign({}, state, {
+        email: action.payload.user.email
+      })
     case "USER_LOGIN":
       return assign({}, state, {
         email: action.payload.user.email
