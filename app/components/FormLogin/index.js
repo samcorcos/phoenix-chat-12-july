@@ -16,16 +16,16 @@ export class FormLogin extends React.Component {
       <div styleName="wrapper">
         <div styleName="form">
           <div styleName="input-group">
-            <input styleName="input" type="text" id="signup-email" />
+            <input placeholder="Email" styleName="input" type="text" id="signup-email" />
           </div>
           <div styleName="input-group">
-            <input styleName="input" type="password" id="signup-password" />
+            <input placeholder="Password" styleName="input" type="password" id="signup-password" />
           </div>
+          <button
+            onClick={this.submit.bind(this)}>
+            Submit
+          </button>
         </div>
-        <button
-          onClick={this.submit.bind(this)}>
-          Submit
-        </button>
       </div>
     )
   }
