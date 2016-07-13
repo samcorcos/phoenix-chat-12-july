@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "test-cover": "babel-istanbul cover -i '**/app/**' _mocha -- --require .test-setup.js -R spec app/**/spec.js",
     "test-unit": "mocha --require babel-register --require .test-setup.js -R spec app/**/spec.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +22,7 @@
   "devDependencies": {
     "autoprefixer": "^6.3.7",
     "babel-core": "^6.10.4",
+    "babel-istanbul": "^0.11.0",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
@@ -30,9 +32,11 @@
     "enzyme": "^2.4.1",
     "expect": "^1.20.2",
     "extract-text-webpack-plugin": "^1.0.1",
+    "jsdom": "^9.4.1",
     "mocha": "^2.5.3",
     "postcss-cssnext": "^2.7.0",
     "postcss-loader": "^0.9.1",
+    "react-addons-test-utils": "^15.2.1",
     "react-css-modules": "^3.7.7",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
